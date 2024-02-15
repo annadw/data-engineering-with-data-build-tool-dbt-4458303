@@ -1,10 +1,10 @@
-SELECT
-    violation_code,
-    COUNT(summons_number) AS ticket_count,
-    SUM(fee_usd) AS total_revenue_usd
-FROM
-    {{ref('silver_violation_tickets')}}
-GROUP BY
-    violation_code
-ORDER BY
-    total_revenue_usd DESC
+select
+  violation_code,
+  count(summons_number) as ticket_count,
+  sum(fee_usd) as total_revenue_usd
+from
+  {{ref('silver_violation_tickets')}}
+group by
+  violation_code
+order by
+  total_revenue_usd desc

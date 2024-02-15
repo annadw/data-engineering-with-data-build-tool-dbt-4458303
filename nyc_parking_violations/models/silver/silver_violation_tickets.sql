@@ -13,6 +13,7 @@ SELECT
     violations.violation_time,
     violations.violation_county,
     violations.violation_legal_code,
+    violations.registration_state,
     codes.fee_usd
 FROM
     {{ref('silver_parking_violations')}} AS violations
